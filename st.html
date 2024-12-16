@@ -3,119 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>온도모니터링 시스템</title>
-    <style>
-        /* 전체 페이지 레이아웃 설정 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* HEADER, MAIN, TAIL 구획 스타일 */
-        header, main, footer {
-            padding: 20px;
-            text-align: center;
-        }
-
-        header {
-            background-color: #f1f1f1;
-        }
-
-        footer {
-            background-color: #f1f1f1;
-        }
-
-        main {
-            display: grid;
-            grid-template-rows: repeat(2, 1fr); /* 3개의 행을 균등하게 나누기 */
-            grid-template-columns: repeat(3, 1fr); /* 3개의 열을 균등하게 나누기 */
-            gap: 1px; /* 셀 간격 설정 */
-            border: 1px solid black; /* MAIN 구획의 외부 테두리 */
-            height: 80vh; /* 화면의 80% 높이 */
-            width: 100%; /* 전체 너비 */
-        }
-
-        /* 각 MAIN BODY 셀 스타일 */
-        main div {
-            border: 1px solid black; /* 셀 구분을 위한 검은 선 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-        }
-
-        .my_btn {
-            background-color: darkgray;
-            color: black;
-            border: none;
-            font-size: 20px;
-            padding: 30px 30px;
-        }
-
-    </style>
+    <title>온도제어 시스템</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>온도제어 시스템 제작하기</h1>
+        </header>
 
-    <header>
-        <h1>온도모니터링 시스템</h1>
-        <br>
-        <h2>SMWP(SMart factory Web Platform)</h2>
-    </header>
+        <div class="main-content">
+            <div class="top-left">
+                
+                <div class="temperature-display">
+                    <h3>온도 데이터</h3>
+                    <div class="image-container">
+                        <img src="black.PNG" alt="img">
+                        <div class="input-container">
+                            <label for="high-input" class="label">High 값 입력:</label>
+                            <input type="text" id="high-input" placeholder="Set High" class="input-box high-input">
+                        </div>
+                        <div class="input-container">
+                            <label for="low-input" class="label">Low &nbsp;값 입력:</label>
+                            <input type="text" id="low-input" placeholder="Set Low" class="input-box low-input">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="top-middle">
+                
+                <h2>테이블</h2>
+                <div class="temperature-table">
+                   
+                </div>
+            </div>
 
-    <main>
-        <div>
-            <div>
-                <h2>온도계화면</h2>
-                <img src="T54.png" alt="img 태그">
+            <div class="top-right">
+                <!-- 알람 설정 -->
+                <h2>알람</h2>
+                <div class="alarm-settings">
+                    <p>High Alarm</p>
+                    <p>Low Alarm</p>
+                </div>
+            </div>
+
+            <div class="bottom-left">
+                <h2>temp chart</h2>
+                <div class="temp-chart">
+                    <!-- 차트를 여기 삽입 -->
+                </div>
+            </div>
+            <div class="bottom-middle">
+                
+                <h2>trend chart</h2>
+                <div class="trend-chart">
+                    <!-- 차트를 여기 삽입 -->
+                </div>
+            </div>
+
+            <div class="bottom-right">
+                
+                <h2>pie chart</h2>
+                <div class="pie-chart">
+                    <!-- 원형 차트 삽입 -->
+                </div>
             </div>
         </div>
-        <div>
-            <h2>1분 단위 통계</h2></p>
-            <button class='my_btn'>
-                오름차순 조회
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class='my_btn'>
-                내림차순 조회
-            </button>
-        </div>
-        <div>
-            <h2>알람회수</h2>
-            <button class='my_btn'>
-                조    회                
-            </button> <br><br><br><br><br><br><br><br><br><br><br><br><br>
-            High Alarm<br>
-            Low Alarm<br>
-            마지막 알람 발생 시간<br>
-            High Alarm<br>
-            Low Alarm<br>
-        </div>
-        <div>
-            <h2>알람 램프</h2>
 
-        </div>
-        <div>
-            <h2>1분 차트</h2>
-
-        </div>
-        <div>
-            <h2>알람 통계 그래프</h2>
-
-        </div>
-
-        </div>
-    </main>
-
-    <footer>
-        <h2>APT(Aws ProjecT)</h2>
-        <h3>충남인력개발원 천안인적자원개발센터</h3>
-    </footer>
-
+        <footer>
+            <h2>APT(Aws ProjecT)</h2>
+            <h3>충남인력개발원 천안인적자원개발센터</h3>
+        </footer>
+    
+    </div>
 </body>
 </html>
