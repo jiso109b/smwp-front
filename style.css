@@ -9,9 +9,158 @@
     animation-iteration-count: 2;
     animation-timing-function: ease;
 }
-  
-@keyframes top-100 {
-    0% {top: 0px;}
 
-    100% {top: 100px;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* 페이지 전체 높이를 100%로 설정 */
+    width: 100%;  /* 페이지 전체 너비를 100%로 설정 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 전체 콘텐츠가 화면에 맞게 배치되도록 설정 */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* .container가 화면 크기에 맞게 늘어납니다 */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0; /* 헤더가 축소되지 않도록 설정 */
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3개의 열 */
+    grid-template-rows: 1fr 1fr; /* 2개의 행 */
+    gap: 20px;
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    flex-grow: 1; /* main-content가 남은 공간을 꽉 채우도록 설정 */
+    overflow: hidden; /* 스크롤이 생기지 않도록 설정 */
+}
+
+.top-left, .top-middle, .top-right, 
+.bottom-left, .bottom-middle, .bottom-right {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-left{
+    padding: 0px;
+}
+.temperature-display {
+    text-align: center; 
+}
+
+.temperature-display h3 {
+    margin-bottom: 10px; 
+}
+
+.image-container {
+    position: relative; /* 이미지 컨테이너를 기준으로 자식 요소 배치 */
+    display: inline-block; /* 이미지와 함께 동작하도록 설정 */
+}
+
+.image-container img {
+    display: block; /* 이미지 주변에 여백 제거 */
+    width: 430px; 
+    height: 290px;
+}
+
+.input-container {
+    position: absolute; /* 이미지 위에 입력 필드 배치 */
+    display: flex; /* 라벨과 입력 필드를 나란히 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 10px; /* 라벨과 입력 필드 사이 여백 */
+    color: white; /* 글씨 색상 */
+}
+
+/* 각 입력 필드 위치 지정 */
+.input-container:nth-child(2) { /* High 값 */
+    top: 200px; 
+    left: 130px;
+}
+
+.input-container:nth-child(3) { /* Low 값 */
+    top: 240px; 
+    left: 130px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-box {
+    width: 80px;
+    height: 25px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.temperature-display img {
+    width: 430px;
+    height: 290px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0; /* 푸터가 축소되지 않도록 설정 */
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.temperature-display p, .alarm-settings p {
+    font-size: 16px;
+}
+
+.animation {
+    width: 100px;
+    height: 100px;
+    background: pink;
+    position: absolute;
+    animation-name: top-100;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease;
+}
+
+@keyframes top-100 {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 100px;
+    }
 }
